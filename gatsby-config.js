@@ -37,6 +37,13 @@ module.exports = {
                 pageContextProperty: `menus`,
                 menus: require('./src/data/menus.json'),
             }
+        },
+        {
+            resolve: `gatsby-source-prismic-graphql`,
+            options: {
+              repositoryName: 'noelmacecom',
+              previews: true,
+            }
         }
     ]
 };
