@@ -21,8 +21,13 @@
                 "text": "Generated from DEV",
                 "url": "https://dev.to/connecting-with-stackbit",
                 "new_window": true
+            },
+            {
+                "text": "Improved with Prismic",
+                "url": "https://prismic.io/",
+                "new_window": true
             }
         ]
     },
-    "title": "Stackbit Fresh Theme"
+    "title": "noelmace.com"
 }

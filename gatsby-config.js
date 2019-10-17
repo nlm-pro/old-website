@@ -43,6 +43,12 @@ module.exports = {
             options: {
               repositoryName: 'noelmacecom',
               previews: true,
+              pages: [{
+                type: 'Talk',
+                match: '/talk/:uid',
+                path: '/talk',
+                component: require.resolve('./src/templates/talk.js')
+              }]
             }
         }
     ]
