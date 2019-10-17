@@ -48,6 +48,16 @@
   text-transform: uppercase;
 }
 
+.talk-description {
+  font-style: italic;
+  margin: 1em 0;
+}
+
+.event-link {
+  height: 2rem;
+  margin: 0 1rem;
+}
+
 /* Post feed */
 .post-feed {
   display: -ms-flexbox;
