@@ -78,18 +78,40 @@ export const query = graphql`
 
 const Talk = ({ talk }) => {
   if (!talk) return null;
+  console.log(talk);
   return (
     <article className="post post-full">
       <header className="post-header">
-        <h1 className="post-title underline">{RichText.asText(talk.node.event_name)}</h1>
+        <h1 className="post-title underline">
+          {RichText.asText(talk.node.event_name)}
+          <a href={talk.node.event_url.url} target="_blank" rel="noopener noreferrer">
+            <img src="/icons/open_in_new.svg" className="event-link" alt="open event website" />
+          </a>
+        </h1>
+        {_.get(talk, 'node.abstract.title') && <div className="post-subtitle">{RichText.asText(talk.node.abstract.title)}</div>}
       </header>
-      {_.get(talk, 'node.abstract.title') && <div className="post-subtitle">{RichText.render(talk.node.abstract.title)}</div>}
-      {_.get(talk, 'node.abstract.body') && <div className="post-content">{RichText.render(talk.node.abstract.body)}</div>}
-      <footer className="post-meta">
+      <div className="post-content">
         <time dateTime={moment(_.get(talk, 'node.date')).strftime('%Y-%m-%d %H:%M')} className="published">
           {moment(_.get(talk, 'node.date')).strftime('%B %d, %Y - %H:%M')}
         </time>
-      </footer>
+        <div className="talk-type">{talk.node.abstract.type}</div>
+        {_.get(talk, 'node.abstract.description') && (
+          <div className="talk-description">{RichText.asText(talk.node.abstract.description)}</div>
+        )}
+        <p className="block-cta">
+          {_.get(talk, 'node.video.url') && (
+            <a className="button" href={talk.node.video.url} target="_blank" rel="noopener noreferrer">
+              Video
+            </a>
+          )}
+          {_.get(talk, 'node.slides.url') && (
+            <a className="button" href={talk.node.slides.url} target="_blank" rel="noopener noreferrer">
+              Slides
+            </a>
+          )}
+        </p>
+        {_.get(talk, 'node.abstract.body') && RichText.render(talk.node.abstract.body)}
+      </div>
     </article>
   );
 };
