@@ -46,15 +46,22 @@ const Talks = ({ talks }) => {
           <article className="post">
             <div className="post-inside">
               <header className="post-header">
-                <h2 className="post-title"><Link to={linkResolver(talk.node._meta)}>{RichText.asText(talk.node.event_name)}</Link></h2>
+                <h2 className="post-title">
+                  <Link to={linkResolver(talk.node._meta)}>{RichText.asText(talk.node.event_name)}</Link>
+                </h2>
               </header>
               <div className="post-content">
                 <p>{RichText.asText(talk.node.abstract.title)}</p>
               </div>
               <footer className="post-meta">
-                <time dateTime={moment(_.get(talk, 'node.date')).strftime('%Y-%m-%d %H:%M')} className="published">
-                 {moment(_.get(talk, 'node.date')).strftime('%B %d, %Y - %H:%M')}
-                </time>
+                {_.get(talk, 'node.date') && (
+                  <time
+                    dateTime={moment(talk.node.date).strftime('%Y-%m-%d %H:%M')}
+                    className={moment().isBefore(talk.node.date) ? 'upcoming' : 'past'}
+                  >
+                    {moment(talk.node.date).strftime('%B %d, %Y - %H:%M')}
+                  </time>
+                )}
               </footer>
             </div>
             <p></p>

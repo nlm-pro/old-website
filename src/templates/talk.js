@@ -91,7 +91,10 @@ const Talk = ({ talk }) => {
         {_.get(talk, 'node.abstract.title') && <div className="post-subtitle">{RichText.asText(talk.node.abstract.title)}</div>}
       </header>
       <div className="post-content">
-        <time dateTime={moment(_.get(talk, 'node.date')).strftime('%Y-%m-%d %H:%M')} className="published">
+        <time
+          dateTime={moment(_.get(talk, 'node.date')).strftime('%Y-%m-%d %H:%M')}
+          className={moment().isBefore(talk.node.date) ? 'upcoming' : 'past'}
+        >
           {moment(_.get(talk, 'node.date')).strftime('%B %d, %Y - %H:%M')}
         </time>
         <div className="talk-type">{talk.node.abstract.type}</div>
