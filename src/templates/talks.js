@@ -2,9 +2,10 @@ import React from 'react';
 import _ from 'lodash';
 import moment from 'moment-strftime';
 
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { Layout } from '../components/index';
 import { RichText } from 'prismic-reactjs';
+import { linkResolver } from '../utils/linkResolver';
 
 export const query = graphql`
   {
@@ -12,6 +13,11 @@ export const query = graphql`
       allTalks(sortBy: date_DESC) {
         edges {
           node {
+            _meta {
+              id
+              uid
+              type
+            }
             abstract {
               ... on PRISMIC_Abstract {
                 title
@@ -36,12 +42,11 @@ const Talks = ({ talks }) => {
   return (
     <section className="post-feed">
       {talks.map(talk => {
-        console.log(talk)
         return (
           <article className="post">
             <div className="post-inside">
               <header className="post-header">
-                <h2 className="post-title">{RichText.asText(talk.node.event_name)}</h2>
+                <h2 className="post-title"><Link to={linkResolver(talk.node._meta)}>{RichText.asText(talk.node.event_name)}</Link></h2>
               </header>
               <div className="post-content">
                 <p>{RichText.asText(talk.node.abstract.title)}</p>
@@ -66,7 +71,7 @@ export default class extends React.Component {
     const { data, ...props } = this.props;
     const talks = data.prismic.allTalks.edges;
     return (
-      <Layout {...this.props}>
+      <Layout {...props}>
         <Talks talks={talks} />
       </Layout>
     );
