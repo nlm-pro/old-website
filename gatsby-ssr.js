@@ -10,7 +10,8 @@ const safePrefix = require("./src/utils/safePrefix").default;
 exports.onRenderBody = function({ setHeadComponents, setPostBodyComponents }) {
 
     setHeadComponents([
-        
+        // EN GREVE
+        <script src="https://noelmace.github.io/widget-engreve/widget.js" async></script>
     ]);
 
     setPostBodyComponents([
