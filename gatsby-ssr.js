@@ -20,7 +20,7 @@ exports.onRenderBody = function({ setHeadComponents, setPostBodyComponents }) {
         `
       }}
     />,
-    <script src="https://noelmace.github.io/widget-engreve/widget.js" async />
+    <script src="https://onestla.tech/widget-engreve/widget.js" async />
   ]);
 
   setPostBodyComponents([
