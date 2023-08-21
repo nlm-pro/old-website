@@ -1,6 +1,6 @@
 # :warning: Project deprecated
 
-> in favor of [noelmace/noelmace.com](https://github.com/noelmace/noelmace.com)
+> in favor of [nlm-pro/noelmace.com](https://github.com/nlm-pro/noelmace.com)
 > and [fullweb.dev/conferences](https://fullweb.dev/conferences/)
 
 ## Stackbit Fresh Theme

@@ -45,7 +45,7 @@ Check out the examples and the decision flowchart in the associated project on G
 
 ## The (old) Mocha way <a name="mocha-way"></a>
 
-> complete example on Github :arrow_right: [test/mocha-way](https://github.com/noelmace/mocha-shared-behaviors/tree/master/test/mocha-way)
+> complete example on Github :arrow_right: [test/mocha-way](https://github.com/nlm-pro/mocha-shared-behaviors/tree/master/test/mocha-way)
 
 First things first! Let's see what the Mocha [documentation](https://github.com/mochajs/mocha/wiki/Shared-Behaviours)
 itself says about this.
@@ -216,7 +216,7 @@ Let's deconstruct the previous example, and minimize its complexity step-by-step
 
 ## using arrow functions with Mocha <a name="mocha-arrow"></a>
 
-> complete example on Github :arrow_right: [test/mocha-way-arrow](https://github.com/noelmace/mocha-shared-behaviors/tree/master/test/mocha-way-arrow)
+> complete example on Github :arrow_right: [test/mocha-way-arrow](https://github.com/nlm-pro/mocha-shared-behaviors/tree/master/test/mocha-way-arrow)
 
 Back to the ["functional" interface](https://github.com/mochajs/mocha/pull/3399) PR. Why would we need a "functional" interface in Mocha in the first place?
 
@@ -270,7 +270,7 @@ This is because Mocha identifies and "records" your test suite first, and _then_
 
 ## "All-in-one" <a name="all-in-one"></a>
 
-> complete example on Github :arrow_right: [test/all-in-one](https://github.com/noelmace/mocha-shared-behaviors/tree/master/test/all-in-one)
+> complete example on Github :arrow_right: [test/all-in-one](https://github.com/nlm-pro/mocha-shared-behaviors/tree/master/test/all-in-one)
 
 One solution is to move the 
 `beforeEach`
@@ -336,7 +336,7 @@ This last point could be seen as an issue. Yet, I believe it's actually an advan
 
 ## "one-by-one" <a name="one-by-one"></a>
 
-> complete example on Github :arrow_right: [test/one-by-one](https://github.com/noelmace/mocha-shared-behaviors/tree/master/test/one-by-one)
+> complete example on Github :arrow_right: [test/one-by-one](https://github.com/nlm-pro/mocha-shared-behaviors/tree/master/test/one-by-one)
 
 If you need to share setups, it could mean that your behavior isn't well defined or identified. Or maybe you shouldn't be working with this level of complexity (_YAGNI_, remember?).
 
@@ -385,7 +385,7 @@ Yet, I only use it if separate files is an absolute requirement.
 
 ## The power of closures <a name="closures-only"></a>
 
-> complete example on Github :arrow_right: [test/closure](https://github.com/noelmace/mocha-shared-behaviors/tree/master/test/closure)
+> complete example on Github :arrow_right: [test/closure](https://github.com/nlm-pro/mocha-shared-behaviors/tree/master/test/closure)
 
 If it isn't, simply use the lambda closure to share data between your shared behaviors.
 
@@ -503,10 +503,6 @@ But remember: ask yourself how you should **design** your tests, before asking h
 Last but not least, here is a flowchart to help you make the right decision every time:
 
 ![flowchart](https://raw.githubusercontent.com/noelmace/mocha-shared-behaviors/master/decision.flowchart.png)
-
-> **Do you have other ideas for defining good shared behaviors? Any feedback or questions about the one I have shown here?**
->
-> **Leave a comment below, tweet at [me @noel_mace](https://twitter.com/noel_mace), or open an issue for the associated [project](noelmace/mocha-shared-behaviors) on Github**
 
 *[This post is also available on DEV.](https://dev.to/open-wc/shared-behaviors-best-practices-with-mocha-519d)*
 

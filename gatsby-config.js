@@ -41,7 +41,7 @@ module.exports = {
         {
             resolve: `gatsby-source-prismic-graphql`,
             options: {
-              repositoryName: 'noelmacecom',
+              repositoryName: 'old-website',
               previews: true,
               pages: [{
                 type: 'Talk',
